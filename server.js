@@ -4,6 +4,12 @@ const bodyParser = require("body-parser");
 const connectDB = require("./config/db");
 require("dotenv").config();
 const path = require("path");
+const corsOptions = {
+  origin: "https://trendfit.netlify.app", // Netlify frontend URL
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type"],
+};
+app.use(cors(corsOptions));
 
 // Initialize Express App
 const app = express();
